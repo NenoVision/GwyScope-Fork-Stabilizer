@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot
+
+f(x)=a*x-b
+
+set fit logfile 'data1_in1.fit'
+fit f(x) 'data.txt' u 3:1 index 0 via a,b
+
+set fit logfile 'data1_in2.fit'
+fit f(x) 'data.txt' u 3:2 index 0 via a,b
+
+set fit logfile 'data0_in1.fit'
+fit f(x) 'data.txt' u 3:1 index 1 via a,b
+
+set fit logfile 'data0_in2.fit'
+fit f(x) 'data.txt' u 3:2 index 1 via a,b

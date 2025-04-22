@@ -1,0 +1,9 @@
+#!/usr/bin/gnuplot
+
+f(x)=(a*x+b)/8191.0
+
+set fit logfile 'data_bare_out1.fit'
+fit f(x) 'data_out.txt' u 3:1 via a,b
+
+set fit logfile 'data_bare_out2.fit'
+fit f(x) 'data_out.txt' u 4:2 via a,b
